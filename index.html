@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Arepo's AI Adventures</title>
     <style>
         * {
             margin: 0;
@@ -11,126 +11,223 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --purple-accent: #9d4edd;
+            --purple-dark: #3c096c;
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --text-light: #ffffff;
+            --text-gray: #b5b5b5;
+            --gradient-start: #240046;
+            --gradient-end: #5a189a;
+        }
+
         body {
-            font-family: system-ui, -apple-system, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
-            color: #333;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
         }
 
         header {
-            background: linear-gradient(to right, #2c3e50, #3498db);
-            color: white;
-            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            padding: 6rem 2rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(157, 78, 221, 0.1), transparent 70%);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
         section {
-            padding: 4rem 0;
+            padding: 6rem 0;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
-            color: #2c3e50;
+            margin-bottom: 4rem;
+            color: var(--text-light);
+            font-size: 2.5rem;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--purple-accent);
+            margin: 1rem auto 0;
+            border-radius: 2px;
         }
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
         }
 
         .project-card {
-            background: #fff;
-            border-radius: 8px;
+            background: var(--bg-card);
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(157, 78, 221, 0.1);
         }
 
         .project-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(157, 78, 221, 0.2);
         }
 
-        .project-card img {
+        .project-media {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            background: #000;
+            position: relative;
+        }
+
+        .project-media video,
+        .project-media audio {
+            width: 100%;
+            border-radius: 8px;
         }
 
         .project-info {
-            padding: 1.5rem;
+            padding: 2rem;
         }
 
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
+        .project-info h3 {
+            color: var(--purple-accent);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
         }
 
-        .skill-tag {
-            background: #e0e0e0;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
+        .project-info p {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
         }
 
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
+        .tool-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: left;
+            border: 1px solid rgba(157, 78, 221, 0.2);
+            transition: all 0.3s ease;
         }
 
-        input, textarea {
+        .tool-card:hover {
+            border-color: var(--purple-accent);
+            transform: translateY(-3px);
+        }
+
+        .tool-card h4 {
+            color: var(--purple-accent);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .tool-card p {
+            color: var(--text-gray);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        .gallery-image {
             width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-
-        button {
-            background: #2c3e50;
-            color: white;
-            padding: 0.8rem 2rem;
-            border: none;
-            border-radius: 4px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: all 0.3s ease;
             cursor: pointer;
-            font-size: 1rem;
         }
 
-        button:hover {
-            background: #3498db;
+        .gallery-image:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 30px rgba(157, 78, 221, 0.2);
         }
 
         footer {
-            background: #2c3e50;
-            color: white;
+            background: var(--bg-card);
             text-align: center;
             padding: 2rem;
             margin-top: 4rem;
         }
 
-        /* Add responsive design */
+        footer p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
         @media (max-width: 768px) {
+            header {
+                padding: 4rem 1rem;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
             .projects {
                 grid-template-columns: 1fr;
             }
-            
-            header {
-                padding: 2rem 1rem;
+
+            .tools-grid {
+                grid-template-columns: 1fr;
             }
-            
+
             .container {
                 padding: 0 1rem;
             }
@@ -140,85 +237,101 @@
 <body>
     <header>
         <div class="container">
-            <h1>Your Name</h1>
-            <p>Web Developer & Designer</p>
+            <h1>Arepo's AI Adventures</h1>
+            <p>Exploring the Frontiers of Artificial Intelligence</p>
         </div>
     </header>
 
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <p>Hello! I'm a passionate web developer with experience in creating responsive and user-friendly websites. I specialize in front-end development and have a keen eye for design.</p>
-        </div>
-    </section>
-
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-list">
-                <span class="skill-tag">HTML5</span>
-                <span class="skill-tag">CSS3</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">React</span>
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">UI/UX Design</span>
-            </div>
-        </div>
-    </section>
-
     <section id="projects">
         <div class="container">
-            <h2 class="section-title">Projects</h2>
+            <h2 class="section-title">Featured Projects</h2>
             <div class="projects">
-                <!-- Project 1 -->
+                <!-- Video Project 1 -->
                 <div class="project-card">
-                    <img src="https://placehold.co/400x300" alt="Project 1">
+                    <div class="project-media">
+                        <video controls>
+                            <source src="path-to-your-video1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                     <div class="project-info">
-                        <h3>Project Name</h3>
-                        <p>Description of your amazing project. Explain what you did and the technologies you used.</p>
+                        <h3>Project Title 1</h3>
+                        <p>Detailed description of your first video project. Explain the AI techniques used, the creative process, and the outcome.</p>
                     </div>
                 </div>
-                <!-- Project 2 -->
+
+                <!-- Video Project 2 -->
                 <div class="project-card">
-                    <img src="https://placehold.co/400x300" alt="Project 2">
+                    <div class="project-media">
+                        <video controls>
+                            <source src="path-to-your-video2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                     <div class="project-info">
-                        <h3>Project Name</h3>
-                        <p>Description of your amazing project. Explain what you did and the technologies you used.</p>
+                        <h3>Project Title 2</h3>
+                        <p>Description of your second video project. Share insights about the AI tools used and the challenges overcome.</p>
                     </div>
                 </div>
-                <!-- Project 3 -->
+
+                <!-- Audio Playlist Project -->
                 <div class="project-card">
-                    <img src="https://placehold.co/400x300" alt="Project 3">
+                    <div class="project-media">
+                        <h3 style="padding: 1rem;">AI Audio Experiments</h3>
+                        <audio controls>
+                            <source src="path-to-your-audio1.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <audio controls style="margin-top: 1rem;">
+                            <source src="path-to-your-audio2.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
                     <div class="project-info">
-                        <h3>Project Name</h3>
-                        <p>Description of your amazing project. Explain what you did and the technologies you used.</p>
+                        <h3>Audio Collection</h3>
+                        <p>Showcase of AI-generated audio pieces. Describe the tools and techniques used to create these sounds.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
+    <section id="image-gallery">
         <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <form class="contact-form">
-                <div class="form-group">
-                    <input type="text" placeholder="Your Name" required>
+            <h2 class="section-title">Image Gallery</h2>
+            <div class="image-gallery">
+                <!-- Replace with your actual image paths -->
+                <img src="path-to-image1.jpg" alt="AI Generated Art 1" class="gallery-image">
+                <img src="path-to-image2.jpg" alt="AI Generated Art 2" class="gallery-image">
+                <img src="path-to-image3.jpg" alt="AI Generated Art 3" class="gallery-image">
+                <img src="path-to-image4.jpg" alt="AI Generated Art 4" class="gallery-image">
+            </div>
+        </div>
+    </section>
+
+    <section id="tools">
+        <div class="container">
+            <h2 class="section-title">Tools & Applications</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <h4>Tool Name 1</h4>
+                    <p>Brief description of how you use this tool in your AI projects and experiments.</p>
                 </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Your Email" required>
+                <div class="tool-card">
+                    <h4>Tool Name 2</h4>
+                    <p>Brief description of how you use this tool in your AI projects and experiments.</p>
                 </div>
-                <div class="form-group">
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                <div class="tool-card">
+                    <h4>Tool Name 3</h4>
+                    <p>Brief description of how you use this tool in your AI projects and experiments.</p>
                 </div>
-                <button type="submit">Send Message</button>
-            </form>
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Your Name. All rights reserved.</p>
+            <p>Arepo's AI Adventures</p>
         </div>
     </footer>
 </body>
