@@ -619,28 +619,6 @@
                 <p>Description of song 25.</p>
             </div>
         </div>
-    </div>
-</div>
-                <!-- Carousel Indicators -->
-             <div class="carousel-indicators"></div>
-                // Initialize indicators dynamically
-function initializeIndicators() {
-    const indicatorsContainer = document.querySelector('.carousel-indicators');
-    indicatorsContainer.innerHTML = ''; // Clear existing indicators
-    slides.forEach((_, index) => {
-        const indicator = document.createElement('span');
-        indicator.classList.add('indicator');
-        if (index === currentSlide) {
-            indicator.classList.add('active');
-        }
-        indicator.onclick = () => goToSlide(index);
-        indicatorsContainer.appendChild(indicator);
-    });
-}
-
-// Call initializeIndicators function during initialization
-initializeIndicators();
-updateIndicators();
             </div>
         </div>
     </section>
