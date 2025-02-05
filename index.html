@@ -622,11 +622,25 @@
     </div>
 </div>
                 <!-- Carousel Indicators -->
-                <div class="carousel-indicators">
-                    <span class="indicator active" onclick="goToSlide(0)"></span>
-                    <span class="indicator" onclick="goToSlide(1)"></span>
-                    <span class="indicator" onclick="goToSlide(2)"></span>
-                </div>
+             <div class="carousel-indicators"></div>
+                // Initialize indicators dynamically
+function initializeIndicators() {
+    const indicatorsContainer = document.querySelector('.carousel-indicators');
+    indicatorsContainer.innerHTML = ''; // Clear existing indicators
+    slides.forEach((_, index) => {
+        const indicator = document.createElement('span');
+        indicator.classList.add('indicator');
+        if (index === currentSlide) {
+            indicator.classList.add('active');
+        }
+        indicator.onclick = () => goToSlide(index);
+        indicatorsContainer.appendChild(indicator);
+    });
+}
+
+// Call initializeIndicators function during initialization
+initializeIndicators();
+updateIndicators();
             </div>
         </div>
     </section>
