@@ -10,7 +10,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         :root {
             --purple-accent: #9d4edd;
             --purple-dark: #3c096c;
@@ -21,14 +20,12 @@
             --gradient-start: #240046;
             --gradient-end: #5a189a;
         }
-
         body {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
             background-color: var(--bg-dark);
             color: var(--text-light);
         }
-
         header {
             background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             padding: 6rem 2rem;
@@ -36,7 +33,6 @@
             position: relative;
             overflow: hidden;
         }
-
         header::after {
             content: '';
             position: absolute;
@@ -46,31 +42,26 @@
             bottom: 0;
             background: radial-gradient(circle at 50% 50%, rgba(157, 78, 221, 0.1), transparent 70%);
         }
-
         header h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
             font-weight: 800;
             letter-spacing: -0.5px;
         }
-
         header p {
             font-size: 1.25rem;
             color: var(--text-gray);
             max-width: 600px;
             margin: 0 auto;
         }
-
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
         }
-
         section {
             padding: 6rem 0;
         }
-
         .section-title {
             text-align: center;
             margin-bottom: 4rem;
@@ -79,7 +70,6 @@
             font-weight: 700;
             position: relative;
         }
-
         .section-title::after {
             content: '';
             display: block;
@@ -89,13 +79,11 @@
             margin: 1rem auto 0;
             border-radius: 2px;
         }
-
         .projects {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2.5rem;
         }
-
         .project-card {
             background: var(--bg-card);
             border-radius: 16px;
@@ -104,48 +92,40 @@
             transition: all 0.3s ease;
             border: 1px solid rgba(157, 78, 221, 0.1);
         }
-
         .project-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 30px rgba(157, 78, 221, 0.2);
         }
-
         .project-media {
             width: 100%;
             background: #000;
             position: relative;
         }
-
         .project-media video {
             width: 100%;
             border-radius: 8px;
         }
-
         .project-info {
             padding: 2rem;
         }
-
         .project-info h3 {
             color: var(--purple-accent);
             margin-bottom: 1rem;
             font-size: 1.5rem;
             font-weight: 600;
         }
-
         .project-info p {
             color: var(--text-gray);
             margin-bottom: 1rem;
             font-size: 1.1rem;
             line-height: 1.7;
         }
-
         .tools-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             padding: 2rem 0;
         }
-
         .tool-card {
             background: var(--bg-card);
             padding: 2rem;
@@ -154,32 +134,27 @@
             border: 1px solid rgba(157, 78, 221, 0.2);
             transition: all 0.3s ease;
         }
-
         .tool-card:hover {
             border-color: var(--purple-accent);
             transform: translateY(-3px);
         }
-
         .tool-card h4 {
             color: var(--purple-accent);
             margin-bottom: 1rem;
             font-size: 1.25rem;
             font-weight: 600;
         }
-
         .tool-card p {
             color: var(--text-gray);
             font-size: 1rem;
             line-height: 1.6;
         }
-
         .image-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 1.5rem;
             padding: 1rem;
         }
-
         .gallery-image {
             width: 100%;
             height: 250px;
@@ -188,24 +163,20 @@
             transition: all 0.3s ease;
             cursor: pointer;
         }
-
         .gallery-image:hover {
             transform: scale(1.03);
             box-shadow: 0 8px 30px rgba(157, 78, 221, 0.2);
         }
-
         footer {
             background: var(--bg-card);
             text-align: center;
             padding: 2rem;
             margin-top: 4rem;
         }
-
         footer p {
             color: var(--text-gray);
             font-size: 0.9rem;
         }
-
         /* Carousel Styles */
         .carousel {
             position: relative;
@@ -213,17 +184,14 @@
             margin: 0 auto;
             overflow: hidden;
         }
-
         .carousel-container {
             display: flex;
             transition: transform 0.5s ease-in-out;
         }
-
         .carousel-slide {
             min-width: 100%;
             box-sizing: border-box;
         }
-
         .song-card {
             background: var(--bg-card);
             border-radius: 16px;
@@ -231,28 +199,23 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(157, 78, 221, 0.1);
         }
-
         .song-video {
             width: 100%;
             border-radius: 8px 8px 0 0;
         }
-
         .song-info {
             padding: 2rem;
         }
-
         .song-info h3 {
             color: var(--purple-accent);
             margin-bottom: 1rem;
             font-size: 1.5rem;
             font-weight: 600;
         }
-
         .song-info p {
             color: var(--text-gray);
             line-height: 1.7;
         }
-
         .carousel-button {
             position: absolute;
             top: 50%;
@@ -267,26 +230,21 @@
             z-index: 10;
             transition: background 0.3s ease;
         }
-
         .carousel-button:hover {
             background: var(--purple-accent);
         }
-
         .prev {
             left: 10px;
         }
-
         .next {
             right: 10px;
         }
-
         .carousel-indicators {
             display: flex;
             justify-content: center;
             gap: 0.5rem;
             margin-top: 1rem;
         }
-
         .indicator {
             width: 10px;
             height: 10px;
@@ -295,36 +253,28 @@
             cursor: pointer;
             transition: background 0.3s ease;
         }
-
         .indicator.active {
             background: var(--purple-accent);
         }
-
         @media (max-width: 768px) {
             header {
                 padding: 4rem 1rem;
             }
-
             header h1 {
                 font-size: 2.5rem;
             }
-
             .section-title {
                 font-size: 2rem;
             }
-
             .projects {
                 grid-template-columns: 1fr;
             }
-
             .tools-grid {
                 grid-template-columns: 1fr;
             }
-
             .container {
                 padding: 0 1rem;
             }
-
             .carousel-button {
                 width: 30px;
                 height: 30px;
@@ -340,7 +290,6 @@
             <p>Exploring the Applications of Artificial Intelligence</p>
         </div>
     </header>
-
     <section id="projects">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
@@ -372,7 +321,6 @@
             </div>
         </div>
     </section>
-
     <!-- AI Songs Carousel -->
     <section id="ai-songs">
         <div class="container">
@@ -380,45 +328,7 @@
             <div class="carousel">
                 <button class="carousel-button prev" onclick="moveCarousel(-1)">❮</button>
                 <button class="carousel-button next" onclick="moveCarousel(1)">❯</button>
-                
                 <div class="carousel-container">
-                    <div class="carousel-slide">
-                        <div class="song-card">
-                            <video controls class="song-video">
-                                <source src="path-to-song1.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div class="song-info">
-                                <h3>Neon Dreams</h3>
-                                <p>A synthwave journey created using Suno's bark-to-music pipeline. The lyrics were generated using GPT-4, focusing on themes of digital consciousness.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <div class="song-card">
-                            <video controls class="song-video">
-                                <source src="path-to-song2.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div class="song-info">
-                                <h3>Quantum Lullaby</h3>
-                                <p>An ambient piece combining Claude's poetry with Suno's melodic generation. The arrangement was fine-tuned using custom prompt engineering.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <div class="song-card">
-                            <video controls class="song-video">
-                                <source src="path-to-song3.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <div class="song-info">
-                                <h3>Digital Thunder</h3>
-                                <p>A rock anthem created through collaborative prompting between multiple LLMs. The guitar riffs were generated using Suno's instrumental model.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
     <!-- Song 1 -->
     <div class="carousel-slide">
         <div class="song-card">
@@ -748,7 +658,6 @@
             </div>
         </div>
     </section>
-
     <section id="tools">
         <div class="container">
             <h2 class="section-title">Tools & Applications</h2>
@@ -768,50 +677,41 @@
             </div>
         </div>
     </section>
-
     <footer>
         <div class="container">
             <p>AI Art and Film Endeavors</p>
         </div>
     </footer>
-
     <script>
         // Carousel Script
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-slide');
         const container = document.querySelector('.carousel-container');
         const indicators = document.querySelectorAll('.indicator');
-
         function updateCarousel() {
             container.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
-
         function updateIndicators() {
             indicators.forEach((indicator, index) => {
                 indicator.classList.toggle('active', index === currentSlide);
             });
         }
-
         function moveCarousel(direction) {
             currentSlide = (currentSlide + direction + slides.length) % slides.length;
             updateCarousel();
             updateIndicators();
         }
-
         function goToSlide(index) {
             currentSlide = index;
             updateCarousel();
             updateIndicators();
         }
-
         // Add touch support
         let touchStartX = 0;
         let touchEndX = 0;
-
         container.addEventListener('touchstart', e => {
             touchStartX = e.changedTouches[0].screenX;
         });
-
         container.addEventListener('touchend', e => {
             touchEndX = e.changedTouches[0].screenX;
             if (touchStartX - touchEndX > 50) {
@@ -820,7 +720,6 @@
                 moveCarousel(-1); // Swipe right
             }
         });
-
         // Initialize indicators
         updateIndicators();
     </script>
