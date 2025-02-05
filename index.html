@@ -662,22 +662,99 @@
 </div>
         </div>
     </section>
-    <section id="tools">
-        <div class="container">
-            <h2 class="section-title">Tools & Applications</h2>
-            <div class="tools-grid">
-                <div class="tool-card">
-                    <h4>Tool Name 1</h4>
-                    <p>Brief description of how you use this tool in your AI projects and experiments.</p>
-                </div>
-                <div class="tool-card">
-                    <h4>Tool Name 2</h4>
-                    <p>Brief description of how you use this tool in your AI projects and experiments.</p>
-                </div>
-                <div class="tool-card">
-                    <h4>Tool Name 3</h4>
-                    <p>Brief description of how you use this tool in your AI projects and experiments.</p>
-                </div>
+   <!-- Tools Section -->
+<section id="tools">
+    <div class="container">
+        <h2 class="section-title">Tools & Applications</h2>
+        <div class="tools-grid">
+            <!-- ChatGPT -->
+            <div class="tool-card">
+                <h4>ChatGPT</h4>
+                <p>A conversational AI model developed by OpenAI, capable of generating human-like text based on prompts.</p>
+            </div>
+
+            <!-- DeepSeek -->
+            <div class="tool-card">
+                <h4>DeepSeek</h4>
+                <p>An AI-powered search and analysis tool designed to provide deep insights and recommendations.</p>
+            </div>
+
+            <!-- Claude -->
+            <div class="tool-card">
+                <h4>Claude</h4>
+                <p>An AI assistant developed by Anthropic, focused on helpful and safe conversational interactions.</p>
+            </div>
+
+            <!-- Gemini -->
+            <div class="tool-card">
+                <h4>Gemini</h4>
+                <p>A multi-modal AI model capable of understanding and generating text, images, and more.</p>
+            </div>
+
+            <!-- MidJourney -->
+            <div class="tool-card">
+                <h4>MidJourney</h4>
+                <p>An AI tool for generating stunning visual art and designs from textual descriptions.</p>
+            </div>
+
+            <!-- Microsoft Designer -->
+            <div class="tool-card">
+                <h4>Microsoft Designer</h4>
+                <p>An AI-powered design tool that helps create professional graphics and visuals effortlessly.</p>
+            </div>
+
+            <!-- Suno -->
+            <div class="tool-card">
+                <h4>Suno</h4>
+                <p>An AI music generation tool that creates original compositions and melodies from text prompts.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Tools Grid Styles */
+    .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        padding: 2rem 0;
+    }
+
+    .tool-card {
+        background: var(--bg-card);
+        padding: 2rem;
+        border-radius: 12px;
+        text-align: left;
+        border: 1px solid rgba(157, 78, 221, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .tool-card:hover {
+        border-color: var(--purple-accent);
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(157, 78, 221, 0.2);
+    }
+
+    .tool-card h4 {
+        color: var(--purple-accent);
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+
+    .tool-card p {
+        color: var(--text-gray);
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .tools-grid {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+    }
+</style>
             </div>
         </div>
     </section>
